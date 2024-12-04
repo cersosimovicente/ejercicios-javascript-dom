@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+</head>
+<body>
+    <h1>Lista de Tareas</h1>
+    <p id="dia"></p>
+    <p id="tipo-tarea"></p>
+    <p id="cantidad"></p>
+    <button id="alerta">Mostrar Notificación</button>
+
+    <script>
+        // Definición del objeto
+        const toDoList = {
+            "tipo de tarea": "Compras",
+            dia: "Lunes",
+            productos: ["Manzanas", "Pan", "Leche"],
+            "cantidad de productos": 3,
+            estado: "pendiente",
+            notificacion: function() {
+                alert("¡Esta tarea tiene una prioridad urgente!");
+            }
+        };
+
+        // Mostrar propiedades en el DOM
+        document.getElementById("dia").textContent = `Día de la tarea: ${toDoList.dia}`;
+        document.getElementById("tipo-tarea").textContent = `Tipo de tarea: ${toDoList["tipo de tarea"]}`;
+        document.getElementById("cantidad").textContent = `Cantidad de productos: ${toDoList["cantidad de productos"]}`;
+
+        // Evento para el botón
+        document.getElementById("alerta").addEventListener("click", function() {
+            toDoList.notificacion();
+        });
+    </script>
+</body>
+</html>
